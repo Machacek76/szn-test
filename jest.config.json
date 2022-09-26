@@ -1,0 +1,14 @@
+{
+
+  "bail": 1,
+  "verbose": true,
+  "testEnvironment": "node",
+
+  "transform": {
+    "^.+\\.[t|j]sx?$": "babel-jest"
+  },
+
+  "testMatch": [
+    "**/__test__/*-test.[jt]s?(x)"
+  ]
+}

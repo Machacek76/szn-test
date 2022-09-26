@@ -1,0 +1,7 @@
+.DS_Store
+.env-dev
+.env-prod
+node_modules/
+
+dist/*
+coverage/*
