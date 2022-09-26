@@ -14,6 +14,12 @@ function target(targetX, targetY, targetR) {
   const tx = validate(targetX, 'targetX');
   const ty = validate(targetY, 'targetY');
   const tr = validate(targetR, 'targetR');
+
+  // polomer musi byt kladne cislo vedsi 0
+  if (tr <= 0) {
+    throw new Error(`Polomer musi byt vedsi nez 0! Je ${tr}`);
+  }
+
   // vypocitame si dopredu mocninu polomeru kruhu
   const rPow = tr ** 2;
   // vypocitamse si polovinu sirky vnitrniho ctverce
@@ -52,7 +58,7 @@ function target(targetX, targetY, targetR) {
       // ulozime si vysledek
       cache[key] = sr < rPow;
 
-      return cache[key]
+      return cache[key];
     },
   };
 }
