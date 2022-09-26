@@ -5,7 +5,7 @@ function target(targetX, targetY, targetR) {
       throw new Error(`Vstupni hodnota ${name} musí být číslo! Je ${value}`);
     }
 
-    // pokud bychm chteli zrychlit
+    // pokud bychom chteli zrychlit
     // return parseInt(value, 10);
     return value;
   };
@@ -38,14 +38,14 @@ function target(targetX, targetY, targetR) {
       const distanceX = Math.abs(tx - mx);
       const distanceY = Math.abs(ty - my);
 
-      // pokud je v jedno ose strela dale od stredu je momi terc
+      // pokud je v jedne ose strela dale od stredu je momi terc
       if (distanceX > tr || distanceY > tr) {
         return false;
       } if (distanceX <= innerSize && distanceY <= innerSize) {
         // pokud je strela ve vnitrnim ctverci je automaticky zasah
         return true;
       }
-      // pokud je nekde mezi vnitrnim a vnejsim cverci vypocitam jeji vzdalenosr od strede
+      // pokud je nekde mezi vnitrnim a vnejsim ctvercem vypocitam jeji vzdalenosr od stredu
       const sr = (mx - tx) ** 2 + (my - ty) ** 2;
       const result = sr < rPow;
 
