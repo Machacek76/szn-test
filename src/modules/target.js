@@ -38,21 +38,21 @@ function target(targetX, targetY, targetR) {
       const distanceX = Math.abs(tx - mx);
       const distanceY = Math.abs(ty - my);
 
-      // pokud je v jedne ose strela dale od stredu je momi terc
+      // pokud je v jedne ose strela dale od stredu je mimo terc
       if (distanceX > tr || distanceY > tr) {
         return false;
       } if (distanceX <= innerSize && distanceY <= innerSize) {
         // pokud je strela ve vnitrnim ctverci je automaticky zasah
         return true;
       }
-      // pokud je nekde mezi vnitrnim a vnejsim ctvercem vypocitam jeji vzdalenosr od stredu
+
+      // pokud je nekde mezi vnitrnim a vnejsim ctvercem vypocitam jestli je doslo k zasahu
       const sr = (mx - tx) ** 2 + (my - ty) ** 2;
-      const result = sr < rPow;
 
       // ulozime si vysledek
-      cache[key] = result;
+      cache[key] = sr < rPow;
 
-      return result;
+      return cache[key]
     },
   };
 }
